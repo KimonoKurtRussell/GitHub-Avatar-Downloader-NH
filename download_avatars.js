@@ -29,25 +29,27 @@ function getRepoContributors(repoOwner, repoName, cb) {
 
 function downloadImageByURL(url, filePath) {
   request("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg")
-//      .on('error', function (err) {
-//        throw err;
-//        console.log(error)
-     };
-//      .on('response', function (response) {
-//        console.log('Response Status Code: ', response.statusCode, 'Response Message', response.statusMessage, 'Content Type', response.headers['content-type']);
-//       })
-//      .pipe(fs.createWriteStream("./avatars"))
-//      .on('finish', function () {
-//        console.log('Avatar Download Completed.');
-//      })
-//    console.log(downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg"))
-//  }
+     .on('error', function (err) {
+       throw err;
+       console.log(error)
+     })
+     .on('response', function (response) {
+       console.log('Response Status Code: ', response.statusCode, 'Response Message', response.statusMessage, 'Content Type', response.headers['content-type']);
+      })
+     .pipe(fs.createWriteStream("./avatars/kvirani.png"))
+     .on('finish', function () {
+       console.log('Avatar Download Completed.');
+     })
+
+ }
 
 
-// getRepoContributors("jquery", "jquery", function(err, result) {
-//    //console.log("Errors:", err);
-//   // console.log("Result:", result);
- // });
+getRepoContributors("jquery", "jquery", function(err, result) {
+   console.log("Errors:", err);
+
+ });
+
+downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg")
 
 
 
